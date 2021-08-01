@@ -179,7 +179,7 @@ public class AdminController {
 		try {
 			List<AdminEntity> admins = adminRepository.findByNameAndSurname(name, surname);
 			if (!adminRepository.findByNameAndSurname(name, surname).isEmpty()) {
-				logger.info("Admins with name: " + name + "and surname: " + surname + " -- FETCHED by: "
+				logger.info("Admins with name: " + name + "and surname: " + surname + " --- FETCHED by: "
 						+ authenticationFacade.getAuthentication().getName());
 				return new ResponseEntity<List<AdminEntity>>(admins, HttpStatus.OK);
 			} else
